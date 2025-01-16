@@ -1,0 +1,10 @@
+resourcecontainers
+ | where type == "microsoft.resources/subscriptions"
+ | where tags contains "Sandbox"
+
+or 
+
+resourcecontainers
+ | where type == "microsoft.resources/subscriptions"
+ | where properties.managementGroupAncestorsChain contains "$ManagementGroupName"
+| project name, SubscriptionId, tags
