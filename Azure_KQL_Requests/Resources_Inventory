@@ -1,0 +1,3 @@
+resources
+| where type contains "Microsoft.provider"
+| extend type==tostring(properties.type)
